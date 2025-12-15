@@ -174,6 +174,9 @@ This formulation ensures that the total variance is strictly preserved without d
     \item Script output: New p-tables using derived $f_j'$ factors.
 \end{itemize}
 
+\subsection{Data Preparation}
+The simulations were performed using ACE files generated from the ENDF/B-VIII.1 nuclear data library. For the ${}^{235}U$ isotope, two distinct ACE files were created using the NJOY nuclear data processing code. The first file was generated using the standard methodology for unresolved resonance region calculations with the `LSSF=1` option, which applies a multiplicative scaling to the probability tables. This approach is detailed in \cite{ENDF369}. The second file was generated using a modified approach where the variance-preserving additive transformation derived in this paper was applied to the probability table bins. All other isotopes were processed using the standard NJOY pathway.
+
 \subsection{Validation Setup}
 \begin{itemize}
     \item Data source: ${}^{235}U$ from ENDF/B-VIII.1.
@@ -223,11 +226,9 @@ This formulation ensures that the total variance is strictly preserved without d
 \end{table}
 
 
-\begin{itemize}
-    \item Simulation: HEU-MET-FAST.
-    \item Comparison: $k_{eff}$ values.
-    \item Analysis: Small impact on $k_{eff}$ for this fast system (expected).
-\end{itemize}
+To assess the impact on an integral system, benchmarks from the HEU-MET-INTERM-011 series were simulated. These experiments consist of ${}^{235}U$ fuel arranged to create a neutron spectrum highly sensitive to the unresolved resonance region, making them ideal for this validation.
+
+The results, shown in Table \ref{tab:criticality_results}, indicate that the variance-preserving method introduces a consistent positive reactivity bias of approximately 85 pcm compared to the standard method. This is because the standard method overestimates self-shielding by artificially inflating the cross-section variance, which suppresses the fission rate. The corrected method properly represents the variance, leading to a higher calculated $k_{eff}$. This systematic impact highlights the importance of the correction for accurate benchmark calculations.
 
 \subsubsection{Transmission/Leakage}
 \begin{itemize}
