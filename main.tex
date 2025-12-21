@@ -179,7 +179,7 @@ This can also be represented as the probability table factor as:
 \subsection{Addressing ``Double Dipping''}
 \label{ssec:double-dipping}
 
-In \autoref{eq:const-var}, it's assumed that the entire variance in the cross-section should be attributable to the fluctuations in the probability table. However, It could be desireable to combine P-Table sampling with a fluctuating pointwise cross-section $\sigma_{3}(E)$, in which \textit{some} resonant structure is resolvable, but there is still measurable self-shielding when compared to simulations that must be accounted for. As a result, $\var{\sigma_{3}}$ would be a non-negligible quantity, and including it would overestimate the true self-shielding. Therefore, the total variance at any given energy must be split into two separate components:
+In \autoref{eq:const-var}, it's assumed that the entire variance in the cross-section should be attributable to the fluctuations in the probability table. However, It could be desireable to combine P-Table sampling with a fluctuating pointwise cross-section $\sigma_{3}(E)$, in which \textit{some} resonant structure is resolvable, but there is still measurable self-shielding when compared to simulations that must be accounted for. As a result, $\var{(\sigma_{3})}$ would be a non-negligible quantity, and including it would overestimate the true self-shielding. Therefore, the total variance at any given energy must be split into two separate components:
 \begin{equation}
     \label{eq:variance-split-requirement}
     \var(\sigma) = \var(\sigma_{PT}) + \var(\sigma_{3})
@@ -253,10 +253,10 @@ As a probability table factor, this ends up equating to:
 
 When probability tables in this form are used, then double dipping is no longer a concern.
 
-An important limiting case is when the variance of the pointwise cross section vanishes, $\var(\sigma_{3} \rightarrow 0$. In this case, the $a$ term approaches $1$, and consequently,  \autoref{eq:p-table-general} reduces to 
+An important limiting case is when the variance of the pointwise cross section vanishes, $\var(\sigma_{3}) \rightarrow 0$. In this case, the $a$ term approaches $1$, and consequently,  \autoref{eq:p-table-general} reduces to 
 \begin{align}
     \label{eq:a-approaches-1}
-    f'_{j} &= 1 + \frac{1}{\sigma_{3}} + \left( \sigma_{j}  - \avg{\sigma}_{MC}\right) \\
+    f'_{j} &= 1 + \frac{1}{\sigma_{3}} \left( \sigma_{j}  - \avg{\sigma}_{MC}\right) \\
            &= \frac{\sigma_{3} +  \left( \sigma_{j}  - \avg{\sigma}_{MC}\right) }{\sigma_{3}} \nonumber 
 \end{align}
 which is equivalent to the previous zero-variance form, \autoref{eq:ptable-affine}.
@@ -270,9 +270,9 @@ The other case is where both $\var(\sigma_{3})$ approaches 0, and $\sigma_{3}$ a
 \end{align}
 which is equivalent to the original P-Table factor, shown in \autoref{eq:f_def}.
 
-\autoref{eq:reduced-case-2} demonstrates why the original probability table factor method is generally accepted; most current evaluations have negligible $\var(\sigma_{3}$ quantities throughout the URR, and negligible difference between $\sigma_{3}$ and $\avg{\sigma}_{MC}$ as calculated throughout the probability tables.
+\autoref{eq:reduced-case-2} demonstrates why the original probability table factor method is generally accepted; most current evaluations have negligible $\var(\sigma_{3})$ quantities throughout the URR, and negligible difference between $\sigma_{3}$ and $\avg{\sigma}_{MC}$ as calculated throughout the probability tables.
 
-This method will enable a more flexible utilization of probability tables in the future.
+This method will enable a more flexible utilization of the unresolved resonance region in the future.
 
 \section{Implementation and Methodology}
 
